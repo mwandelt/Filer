@@ -6,7 +6,7 @@ full-sized database system, which might me over-the-top when the amount of
 stored data is small and the number of requests per hour is low.
 
 
-## Basic Usage
+# Basic Usage
 
 First, you have to prepare an empty directory which is writable for PHP. Let's
 say, the path is stored in a variable called `$storageDir`. If you want to store
@@ -32,7 +32,7 @@ arrays you have to convert them to a string first, e.g. via `serialize()` or
 `json_encode()`.
 
 
-## About Locking and Unlocking
+# About Locking and Unlocking
 
 When writing to files in a multi-threaded environment special precautions have
 to be taken to prevent simultaniously running processes from overwriting each
@@ -66,7 +66,7 @@ remove it:
 `$filer->unlock();`
 
 
-## Avoiding Infinite Locks
+# Avoiding Infinite Locks
 
 As said above, a lock created by the current script will be removed
 automatically on shutdown, even if you forget to call the `unlock` method. But
@@ -88,7 +88,7 @@ the originating script is still running. If it is too long, certain functions of
 your application might be blocked unneccessarily long after a crash. 
 
 
-## Changing the Time-Out
+# Changing the Time-Out
 
 If the `.lock` folder cannot be created, Filer will wait a second, then retry,
 then wait another second, retry etc. By default this trial process lasts five
@@ -102,7 +102,7 @@ Don't set this period too short. From a user's point of view it is less annoying
 to wait some seconds for a reponse than to get an error message.
 
 
-## Crash Recovery
+# Crash Recovery
 
 Filer takes some precautions to prevent data loss in case of sudden shutdowns or
 server crashes. When storing data the data will first be written to a temporary
@@ -117,7 +117,7 @@ i.e. before the temporary file has been renamed, Filer will catch up on renaming
 it the next time you try to read the file. 
 
 
-## Securing Data Files
+# Securing Data Files
 
 Generally, you should configure your webserver to deny access to the files in
 the storage directory (e.g. via `.htaccess` files). Otherwise unauthorized
@@ -131,7 +131,7 @@ data files, Filer will automatically remove any PHP code snippet, so you won't
 see any difference.
 
 
-## Customising Prefixes and Names
+# Customising Prefixes and Names
 
 If you want Filer to name the generated lock folder differently or use another
 prefix for temporary files and backup files, just set the respective properties
