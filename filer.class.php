@@ -77,10 +77,7 @@ class Filer {
 
 		$storageFile = $this->dir . '/' . $fileName;
 		$backupFile = $this->dir . '/' . $this->backupPrefix . $fileName;
-		$tempFile = $this->dir . '/' . $this->tempPrefix
-		 	. pathinfo( $fileName, PATHINFO_FILENAME )
-			. '-' . base_convert( 1000 * microtime( TRUE ), 10, 36 )
-			. '.' . pathinfo( $fileName, PATHINFO_EXTENSION );
+		$tempFile = $this->dir . '/' . $this->tempPrefix . $fileName;
 
 		if ( file_put_contents( $tempFile, $string ) === FALSE )
 		{
