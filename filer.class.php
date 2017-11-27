@@ -36,8 +36,8 @@ class Filer {
 	public $autoUnlockPeriod = 24*60*60;
 	public $timeOutPeriod = 5;
 	public $lockFolderName = '.lock';
-	public $backupPrefix = '~';
-	public $tempPrefix = '~~';
+	public $backupPrefix = '~BAK~';
+	public $tempPrefix = '~TMP~';
 	public $lastErrorNo = NULL;
 	public $lastErrorMsg = NULL;
 	
