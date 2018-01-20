@@ -33,7 +33,7 @@
 class Filer {
 
 	public $dir;
-	public $autoUnlockPeriod = 24*60*60;
+	public $autoUnlockPeriod = 86400; // 24*60*60
 	public $timeOutPeriod = 5;
 	public $lockFolderName = '.lock';
 	public $backupPrefix = '~BAK~';
