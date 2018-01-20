@@ -60,7 +60,7 @@ method with a boolean TRUE as second argument:
 
 `filer->read( 'data.txt', TRUE );`
 
-An explicite lock will remain until your script shuts down or you explicitly
+An explicit lock will remain until your script shuts down or you explicitly
 remove it:
 
 `$filer->unlock();`
@@ -106,7 +106,7 @@ to wait some seconds for a reponse than to get an error message.
 
 Filer takes some precautions to prevent data loss in case of sudden shutdowns or
 server crashes. When storing data the data will first be written to a temporary
-file. Then, the original file will be renamed by adding a tilde (`~`) at the
+file. Then, the original file will be renamed by adding a `~BAK~` prefix at the
 beginning of its name. Finally, the temporary file will be renamed so that its
 name conforms to the original file name. This procedure ensures that, at the
 worst, a single write process might fail, but you will never loose your complete
@@ -133,7 +133,7 @@ see any difference.
 
 # Customising Prefixes and Names
 
-If you want Filer to name the generated lock folder differently or use another
-prefix for temporary files and backup files, just set the respective properties
+If you want Filer to name the generated lock folder differently or use other
+prefixes for temporary files and backup files, just set the respective properties
 of the Filer object. Have a look at the source code --- the names of the
 properties should be pretty much self-explanatory.
