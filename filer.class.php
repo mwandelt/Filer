@@ -191,7 +191,6 @@ class Filer {
 		if ( file_exists( $lockFolder ) && $this->autoUnlockPeriod
 		 		&& time() - filemtime( $lockFolder ) > $this->autoUnlockPeriod )
 		{
-			$this->delete_temp_files();
 			rmdir( $lockFolder );
 		}
 
