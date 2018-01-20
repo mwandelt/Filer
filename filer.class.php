@@ -191,7 +191,7 @@ class Filer {
 		if ( file_exists( $lockFolder ) && $this->autoUnlockPeriod
 		 		&& time() - filemtime( $lockFolder ) > $this->autoUnlockPeriod )
 		{
-			rmdir( $lockFolder );
+			@rmdir( $lockFolder );
 		}
 
 		$oldUmask = umask(0);
