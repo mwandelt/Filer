@@ -135,16 +135,15 @@ class Filer {
 
 		if ( ! file_exists( $storageFile ) )
 		{
-			if ( ! file_exists( $backupFile ) || ! $this->lock() 
-					|| ! rename( $backupFile, $storageFile ) )
+			if ( ! file_exists( $backupFile ) )
 			{
 				return FALSE;
 			}
 
-			$this->_unlock();
+			$storageFile = $backupFile;
 		}
 
-		$string = file_get_contents( $this->dir . '/' . $fileName );
+		$string = file_get_contents( $storageFile );
 
 		if ( $string === FALSE )
 		{
