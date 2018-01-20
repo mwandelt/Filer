@@ -60,9 +60,6 @@ class Filer {
 			$this->lastErrorMsg = 'Data must be of type string';
 		}
 		
-		$this->lastErrorNo = NULL;
-		$this->lastErrorMsg = NULL;
-
 		if ( ! $this->_lock() )
 		{
 			$this->lastErrorNo = 101; 
@@ -119,6 +116,8 @@ class Filer {
 			unlink( $backupFile );
 		}
 
+		$this->lastErrorNo = NULL;
+		$this->lastErrorMsg = NULL;
 		$this->_unlock();
 		return TRUE;
 	}
