@@ -175,7 +175,7 @@ class Filer {
 	public function unlock()
 	{
 		$this->keepLock = FALSE;
-		$this->_unlock();;
+		$this->_unlock();
 	}
 
 
