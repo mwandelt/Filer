@@ -58,6 +58,7 @@ class Filer {
 		{
 			$this->lastErrorNo = 100; 
 			$this->lastErrorMsg = 'Data must be of type string';
+			return FALSE;
 		}
 		
 		if ( ! $this->_lock() )
