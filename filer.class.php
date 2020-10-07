@@ -153,7 +153,7 @@ class Filer {
 		
 		if ( substr( $string, 0, 5 ) == '<?php' )
 		{
-			$string = substr( $string, strpos( $string, "\n" ) );
+			$string = substr( $string, strpos( $string, "\n" ) + 1 );
 		}
 
 		return $string;
