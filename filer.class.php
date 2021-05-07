@@ -151,7 +151,7 @@ class Filer {
 			return FALSE;
 		}
 		
-		if ( substr( $string, 0, 5 ) == '<?php' )
+		if ( substr( $string, 0, 10 ) == '<?php die(' )
 		{
 			$string = substr( $string, strpos( $string, "\n" ) + 1 );
 		}
