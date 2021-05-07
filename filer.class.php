@@ -70,7 +70,7 @@ class Filer {
 		
 		if ( pathinfo( $fileName, PATHINFO_EXTENSION ) == 'php' )
 		{
-			$string = "<?php die('Forbidden'); ?>\n{$string}";
+			$string = "<?php die('Forbidden'); ?".">\n{$string}";
 		}
 
 		$storageFile = $this->dir . '/' . $fileName;
